@@ -1033,6 +1033,12 @@ static void Task_GiveExpToMon(u8 taskId)
     u8 battlerId = gTasks[taskId].tExpTask_battler;
     s16 gainedExp = gTasks[taskId].tExpTask_gainedExp;
 
+    //
+    gainedExp = 0;
+    // u8 SAVE_STAT_BADGES = 4;
+    // SaveStatToString(SAVE_STAT_BADGES, gStringVar4, 2);
+    //
+
     if (IsDoubleBattle() == TRUE || monId != gBattlerPartyIndexes[battlerId]) // Give exp without moving the expbar.
     {
         struct Pokemon *mon = &gPlayerParty[monId];
